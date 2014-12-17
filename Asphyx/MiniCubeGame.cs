@@ -120,7 +120,7 @@ namespace Asphyx
         protected override void Draw(GameTime gameTime)
         {
             // Clears the screen with the Color.CornflowerBlue
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
 
             // Setup the vertices
             GraphicsDevice.SetVertexBuffer(vertices);
