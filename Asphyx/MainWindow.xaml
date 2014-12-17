@@ -1,0 +1,105 @@
+﻿<Window x:Class="Asphyx.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Asphyx Demo Tool " Width="1280" Height="720" 
+        MinWidth="1280" MinHeight="720" 
+        Background="#2D2D30" FontFamily="/Asphyx;component/Resources/Fonts/#uni 05_54">
+
+    <Window.Resources>
+
+        <Style TargetType="{x:Type TabItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <Grid>
+                            <Border  Name="Border" Margin="0,0,-4,0" BorderThickness="1,1,1,1" >
+                                <ContentPresenter x:Name="ContentSite" VerticalAlignment="Center" HorizontalAlignment="Center" ContentSource="Header" Margin="12,2,12,2" RecognizesAccessKey="True"/>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Panel.ZIndex" Value="100" />
+                                <Setter TargetName="Border" Property="Background" Value="#007ACC" />
+                            </Trigger>
+
+                            <Trigger Property="IsSelected" Value="False">
+                                <Setter TargetName="Border" Property="Background" Value="#2D2D30" />
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <TabControl x:Name="tabs" Background="#414144">
+            <TabItem x:Name="fileTab" Header="FILE" Foreground="White">
+                <Grid Background="#2D2D30"/>
+            </TabItem>
+            <TabItem x:Name="viewTab" Header="VIEW" Foreground="White">
+                <Grid Background="#2D2D30"/>
+            </TabItem>
+            <TabItem x:Name="texGenTab" Header="TEXTURE GENERATOR" Foreground="White">
+                <Grid Background="#2D2D30"/>
+            </TabItem>
+            <TabItem x:Name="matEditTab" Header="MATERIAL EDITOR" Foreground="White">
+                <Grid Background="#2D2D30"/>
+            </TabItem>
+            <TabItem x:Name="modelerTab" Header="MODELER" Foreground="White">
+                <Grid  Background="#2D2D30">
+                    <Grid x:Name="modeler3DViewGrid" Margin="0,0,341,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <!--<Button Grid.Row="0" Grid.Column="0" Content="TOP VIEW" />
+                        <Button Grid.Row="0" Grid.Column="1" Content="LEFT VIEW" />
+                        <Button Grid.Row="1" Grid.Column="0" Content="FRONT VIEW" />
+                        <Button Grid.Row="1" Grid.Column="1" Content="3D VIEW" />-->
+                    </Grid>
+                    <Grid Margin="0,0,0,276" HorizontalAlignment="Right" Width="341">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Button Grid.Row="0" Grid.Column="0" Content="MODEL LIST" />
+                        <Button Grid.Row="0" Grid.Column="1" Content="MODEL PRIMITIVES" />
+
+                    </Grid>
+                    <Grid Margin="0,383,0,0" HorizontalAlignment="Right">
+                        <Button Grid.Row="0" Grid.Column="0" Content="MODEL MATERIALS" HorizontalAlignment="Right" Width="341" />
+
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="keyframerTab" Header="KEYFRAMER" Foreground="White">
+                <Grid Background="#2D2D30"/>
+            </TabItem>
+            <TabItem x:Name="videoEditorTab" Header="VIDEO EDITOR" Foreground="White">
+                <Grid x:Name="videoEditorGrid" Background="#2D2D30" ShowGridLines="True" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                </Grid>
+            </TabItem>
+
+
+        </TabControl>
+
+    </Grid>
+</Window>
